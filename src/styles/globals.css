@@ -70,29 +70,37 @@
     @apply text-xs leading-5 font-semibold;
   }
 
+  /* text-base is used for Paragraph and Link */
+
   .text-base-regular {
-    @apply text-sm leading-6 font-normal;
-  }
-
-  .text-base-semi {
-    @apply text-sm leading-6 font-semibold;
-  }
-
-  .text-large-regular {
     @apply text-base leading-6 font-normal;
   }
 
-  .text-large-semi {
+  .text-base-semi {
     @apply text-base leading-6 font-semibold;
   }
 
+  /* text-large is used for Heading 3 */
+
+  .text-large-regular {
+    @apply text-lg leading-6 font-normal;
+  }
+
+  .text-large-semi {
+    @apply text-lg leading-6 font-semibold;
+  }
+
+  /* text-xl is used for Heading 2 */
+
   .text-xl-regular {
-    @apply text-2xl leading-[36px] font-normal;
+    @apply text-[22px] leading-[36px] font-normal;
   }
 
   .text-xl-semi {
-    @apply text-2xl leading-[36px] font-semibold;
+    @apply text-[22px] leading-[36px] font-semibold;
   }
+
+  /* text-2xl is used for Heading 1 */
 
   .text-2xl-regular {
     @apply text-[30px] leading-[48px] font-normal;
