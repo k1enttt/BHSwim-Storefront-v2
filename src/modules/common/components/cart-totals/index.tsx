@@ -29,7 +29,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
 
   return (
     <div>
-      <div className="flex flex-col gap-y-2 txt-medium text-ui-fg-subtle ">
+      <div className="flex flex-col gap-y-2 text-sm leading-[21px] font-normal text-ui-fg-subtle ">
         <div className="flex items-center justify-between">
           <span className="flex gap-x-1 items-center">
             Subtotal (excl. shipping and taxes)
@@ -78,10 +78,10 @@ const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
         )}
       </div>
       <div className="h-px w-full border-b border-gray-200 my-4" />
-      <div className="flex items-center justify-between text-ui-fg-base mb-2 txt-medium ">
+      <div className="flex items-center justify-between text-ui-fg-base mb-2 text-sm leading-[21px] font-normal ">
         <span>Total</span>
         <span
-          className="txt-xlarge-plus"
+          className="text-lg leading-[27px] font-medium"
           data-testid="cart-total"
           data-value={total || 0}
         >
