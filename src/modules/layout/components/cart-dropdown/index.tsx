@@ -82,10 +82,43 @@ const CartDropdown = ({
       <Popover className="relative h-full">
         <PopoverButton className="h-full">
           <LocalizedClientLink
-            className="hover:text-ui-fg-base"
+            className="flex items-center gap-3 group"
             href="/cart"
             data-testid="nav-cart-link"
-          >{`Cart (${totalItems})`}</LocalizedClientLink>
+          >
+            <span className="relative rounded-md md:bg-primary md:text-primary-foreground text-primary bg-transparent p-2 flex items-center justify-center">
+              <svg
+                className="w-6 h-6"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+                />
+              </svg>
+              {/* Badge overlay for mobile */}
+              <span className="md:hidden absolute -top-1 -right-1 min-w-[20px] h-5 px-1 flex items-center justify-center rounded-full bg-highlight text-highlight-foreground text-xs font-bold">
+                {totalItems}
+              </span>
+            </span>
+            {/* Cart info: hidden on mobile, shown on small+ */}
+            <span className="hidden md:flex flex-col items-start">
+              <span className="text-sm font-medium text-ui-fg-base text-left">
+                {totalItems} mặt hàng
+              </span>
+              <span className="text-xs text-ui-fg-subtle">
+                {subtotal}&nbsp;₫
+              </span>
+            </span>
+          </LocalizedClientLink>
         </PopoverButton>
         <Transition
           show={cartDropdownOpen}
