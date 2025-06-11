@@ -5,13 +5,15 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
+import LanguageButton from "@modules/layout/components/language-button"
+import BhswimSideMenu from "@modules/layout/components/bhswim-side-menu"
 
 export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
 
   return (
-    <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 mx-auto duration-200 bg-white border-ui-border-base">
+    <div className="inset-x-0 z-50">
+      <header className="relative h-fit mx-auto duration-200 bg-white border-ui-border-base">
         {/* Tools bar: đa ngôn ngữ, tài khoản, đăng xuất, danh sách yêu thích */}
         <div className="hidden md:flex items-center justify-between px-4 py-2 border-b border-ui-border-base text-xs">
           <span className="text-ui-fg-subtle">
@@ -19,9 +21,7 @@ export default async function Nav() {
           </span>
           <div className="flex items-center gap-4">
             {/* Nút đa ngôn ngữ */}
-            <button className="hover:text-ui-fg-base" type="button">
-              🌐 VN
-            </button>
+            <LanguageButton />
             {/* Tài khoản */}
             <LocalizedClientLink
               className="hover:text-ui-fg-base"
@@ -46,9 +46,11 @@ export default async function Nav() {
         {/* Search bar: Logo, search bar, cart button */}
         {/* Mobile: sidebar + account left, logo center, search+cart right */}
         <div className="flex md:hidden items-center justify-between px-4 py-3 gap-2 text-primary">
+          
           {/* Left: Side menu + Account */}
           <div className="flex items-center gap-2">
-            <SideMenu regions={regions} />
+            {/* <SideMenu regions={regions} /> */}
+            <BhswimSideMenu />
             <LocalizedClientLink
               href="/account"
               className="hover:text-ui-fg-base flex items-center"
@@ -134,11 +136,34 @@ export default async function Nav() {
           </div>
           {/* Search bar - 6/12 */}
           <div className="col-span-6">
-            <input
-              type="text"
-              placeholder="Tìm kiếm sản phẩm..."
-              className="w-full border border-ui-border-base rounded px-3 py-2 text-sm focus:outline-none focus:border-ui-fg-base"
-            />
+            <div className="flex items-center border border-ui-border-base rounded px-2 py-1 bg-white">
+              <input
+                type="text"
+                placeholder="Tìm kiếm sản phẩm..."
+                className="w-full px-2 py-2 text-sm focus:outline-none bg-transparent"
+              />
+              <button
+                type="button"
+                className="p-2 text-secondary-foreground bg-secondary hover:bg-secondary/80 rounded transition-colors"
+                aria-label="Tìm kiếm"
+              >
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
+                  <circle
+                    cx="11"
+                    cy="11"
+                    r="7"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M20 20l-3-3"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
           {/* Cart button - 2/12 */}
           <div className="col-span-2 flex justify-end">
@@ -160,14 +185,65 @@ export default async function Nav() {
 
         {/* Navigation bar */}
         <nav className="bg-primary text-primary-foreground w-full md:block hidden">
-          <ul className="flex items-center gap-2 px-4 py-2">
-            <li>
+          <ul className="flex items-center gap-2 px-4">
+            <li className="relative group">
               <LocalizedClientLink
                 href="/"
                 className="bg-secondary text-secondary-foreground px-3 py-1 rounded font-medium"
               >
                 Trang chủ
               </LocalizedClientLink>
+              {/* Dropdown menu */}
+              <ul className="absolute left-0 top-full w-48 bg-white shadow-lg rounded border border-ui-border-base opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none transition-opacity z-50">
+                <li>
+                  <LocalizedClientLink
+                    href="/option-1"
+                    className="block px-4 py-2 hover:bg-secondary/10 text-primary"
+                  >
+                    Option 1
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/option-2"
+                    className="block px-4 py-2 hover:bg-secondary/10 text-primary"
+                  >
+                    Option 2
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/option-3"
+                    className="block px-4 py-2 hover:bg-secondary/10 text-primary"
+                  >
+                    Option 3
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/option-4"
+                    className="block px-4 py-2 hover:bg-secondary/10 text-primary"
+                  >
+                    Option 4
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/option-5"
+                    className="block px-4 py-2 hover:bg-secondary/10 text-primary"
+                  >
+                    Option 5
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/option-6"
+                    className="block px-4 py-2 hover:bg-secondary/10 text-primary"
+                  >
+                    Option 6
+                  </LocalizedClientLink>
+                </li>
+              </ul>
             </li>
             <li>
               <LocalizedClientLink
