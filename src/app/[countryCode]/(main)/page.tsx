@@ -425,7 +425,7 @@ export default async function Home(props: {
                 className="w-full h-48 object-cover rounded-lg"
               />
               {/* Overlay: top left, primary text, white bg, rounded top corners, left aligned */}
-              <div className="absolute bottom-0 left-0 font-bold uppercase bg-white px-6 py-3 rounded-tl-lg rounded-tr-lg text-primary text-sm flex items-center justify-start w-fit ml-4">
+              <div className="absolute bottom-0 left-0 font-bold uppercase bg-white px-6 pt-3 pb-2 rounded-tl-lg rounded-tr-lg text-primary text-sm flex items-center justify-start w-fit ml-4">
                 April 9, 2024
               </div>
             </div>
@@ -471,7 +471,7 @@ export default async function Home(props: {
                 className="w-full h-48 object-cover rounded-lg"
               />
               {/* Overlay: top left, primary text, white bg, rounded top corners, left aligned */}
-              <div className="absolute bottom-0 left-0 font-bold uppercase bg-white px-6 py-3 rounded-tl-lg rounded-tr-lg text-primary text-sm flex items-center justify-start w-fit ml-4">
+              <div className="absolute bottom-0 left-0 font-bold uppercase bg-white px-6 pt-3 pb-2 rounded-tl-lg rounded-tr-lg text-primary text-sm flex items-center justify-start w-fit ml-4">
                 April 10, 2024
               </div>
             </div>
