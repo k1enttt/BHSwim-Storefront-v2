@@ -14,10 +14,10 @@ export default async function Nav() {
     <div className="inset-x-0 z-50">
       <header className="relative h-fit mx-auto duration-200 bg-white border-ui-border-base">
         {/* Tools bar: đa ngôn ngữ, tài khoản, đăng xuất, danh sách yêu thích */}
-        <div className="hidden md:block px-4 py-2 border-b border-ui-border-base text-xs">
+        <div className="hidden md:block py-2 border-b border-ui-border-base text-xs">
           <div className="container flex items-center justify-between">
             <span className="text-ui-fg-subtle">
-              Chào mừng bạn đến với BHSWIM!
+              Cửa hàng Đồ bơi và Dụng cụ bơi lội chính hãng
             </span>
             <div className="flex items-center gap-4">
               {/* Nút đa ngôn ngữ */}
@@ -63,7 +63,7 @@ export default async function Nav() {
 
         {/* Search bar: Logo, search bar, cart button */}
         {/* Mobile: sidebar + account left, logo center, search+cart right */}
-        <div className="flex md:hidden items-center justify-between px-4 py-3 gap-2 text-primary">
+        <div className="container flex md:hidden items-center justify-between py-3 gap-2 text-primary">
           {/* Left: Side menu + Account */}
           <div className="flex items-center gap-2">
             {/* <SideMenu regions={regions} /> */}
